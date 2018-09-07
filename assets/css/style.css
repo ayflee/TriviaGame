@@ -1,0 +1,57 @@
+body {
+    background-color: #4F9647;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 200px;
+    margin-top:20px;
+    
+}
+
+#ptimer {
+    margin-left:-30px;
+    font-weight:bold;
+}
+
+.timer {
+    font-weight:bold;
+}
+
+#pscore {
+    margin-left:-30px;
+    font-weight:bold;
+}
+
+.score {
+    margin-left:30px;
+    font-weight:bold;
+}
+
+.form-check {
+    margin-top: 20px;
+}
+
+.questions {
+    margin-top: 30px;
+    font-size: 20px;
+    color:orange;
+}
+
+h1 {
+    color:white;
+    margin-top:30px;
+}
+
+#pintro {
+    color: white;
+
+}
+
+#ptimer {
+    color:red;
+}
+
+#playBtn {
+    font-size:30px;
+    color:blueviolet;
+}
+
