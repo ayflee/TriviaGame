@@ -14,6 +14,24 @@
     //When the timer reaches zero
 // after time stops:
     //display correct answer next to incorrect selections
+
+window.onload = function() {
+    $("#playBtn").on("click", timer.start);
+}
+
+var clockrunning = false;
+var intervalID;
+var timer = {
+    time:20,
+    start:function(){
+        if(!clockrunning) {
+            intervalID = setInterval(timer.count,1000);
+        }
+    }
+    
+}
+
+
     
 if($("#question1 option:selected").text() == 5 months) {   
 }
@@ -30,14 +48,10 @@ else{
 
 
 
-// This code will run as soon as the page loads
-window.onload = function() {
-    $("#playBtn").on("click", stopwatch.start);
-  };
+
 
 $("#playBtn").on("click", stopwatch.count);
   
-//   //  Variable that will hold our setInterval that runs the stopwatch
 //   var intervalId;
   
 //   // prevents the clock from being sped up unnecessarily
