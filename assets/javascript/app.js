@@ -60,6 +60,8 @@ function checkAnswers(){
 
     $('#pscore').text(score + ' / 5');
 
+    
+
 
 }
     
