@@ -17,40 +17,77 @@
 
 window.onload = function() {
     $("#playBtn").on("click", timer.start);
+    $('.correct-answer').hide(); // Hide the correct answers when the page loads
+}
+var count = function(){
+    timer.time--
 }
 
+var score = 0;
 var clockrunning = false;
 var intervalID;
 var timer = {
-    time:20,
+    time:8,
     start:function(){
         if(!clockrunning) {
-            intervalID = setInterval(timer.count,1000);
+            intervalID = setInterval(function(){ // Store the interval so we can stop the timer later. Also update the timer element on HTML
+                timer.time--
+                $("#ptimer").text(timer.time);
+
+                if(timer.time === 0){ // Time ran out. This is a place to run end of game functions
+                    clearInterval(intervalID);
+                    checkAnswers();
+                }
+            },1000);
         }
+    },
+}
+
+function checkAnswers(){
+    $('.correct-answer').show();
+    var questions = Array.from($('.custom-select'));
+    console.log(questions);
+
+    if(questions[0].value == 1){ //compare the question against the correct answer
+        score++
     }
+    else{
+        //highlight the right answer
+        // $('#answer1').text('Correct answer: whatever') -  only display the right answer if they got question wrong
+    }
+
+    // The rest of the answer checks
+
+    $('#pscore').text(score + ' / 5');
+
     
+
+
 }
+    
+
+
 
 
     
-if($("#question1 option:selected").text() == 5 months) {   
-}
-else{
+// if($("#question1 option:selected").text() == 5) {   
+// }
+// else{
     
-}
-)
-    $("#question2 option:selected").text();
-    $("#question3 option:selected").text();
-    $("#question4 option:selected").text();
-    $("#question5 option:selected").text();
+// }
+// )
+//     $("#question2 option:selected").text();
+//     $("#question3 option:selected").text();
+//     $("#question4 option:selected").text();
+//     $("#question5 option:selected").text();
 
-    //show score as x/5 correct
-
-
+//     //show score as x/5 correct
 
 
 
-$("#playBtn").on("click", stopwatch.count);
+
+
+// $("#playBtn").on("click", stopwatch.count);
   
 //   var intervalId;
   
