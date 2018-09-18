@@ -1,20 +1,5 @@
 // =============================
 
-//load page when window is loaded with
-    // score at 0
-    // timer set to 20 sec
-
-//when user clicks start:
-    //timer -- counts down by one sec increments and stops at 0
-//when user selects an answer:
-    //first check if timer is >0
-    //record user input for each question and compare against correct answer
-
-
-    //When the timer reaches zero
-// after time stops:
-    //display correct answer next to incorrect selections
-
 window.onload = function() {
     $("#playBtn").on("click", timer.start);
     $('.correct-answer').hide(); // Hide the correct answers when the page loads
@@ -27,11 +12,11 @@ var score = 0;
 var clockrunning = false;
 var intervalID;
 var timer = {
-    time:8,
+    time:25,
     start:function(){
         if(!clockrunning) {
             intervalID = setInterval(function(){ // Store the interval so we can stop the timer later. Also update the timer element on HTML
-                timer.time--
+                timer.time--;
                 $("#ptimer").text(timer.time);
 
                 if(timer.time === 0){ // Time ran out. This is a place to run end of game functions
@@ -48,13 +33,33 @@ function checkAnswers(){
     var questions = Array.from($('.custom-select'));
     console.log(questions);
 
-    if(questions[0].value == 1){ //compare the question against the correct answer
-        score++
+    if(questions[0].value == 3){ //compare the question against the correct answer
+        score++;
     }
-    else{
+    else (questions[1].value == 1){
+        score++;
+    }
+
+    else (questions[2].value == 1){
+        score++;
+
+    }
+
+    else (questions[3].value == 3){
+        score++;
+    }
+
+    else (questions[4].value == 2){
+        score ++;
+    }
+
+    }
+
+
+    // else{
         //highlight the right answer
         // $('#answer1').text('Correct answer: whatever') -  only display the right answer if they got question wrong
-    }
+    // }
 
     // The rest of the answer checks
 
@@ -63,7 +68,7 @@ function checkAnswers(){
     
 
 
-}
+
     
 
 
